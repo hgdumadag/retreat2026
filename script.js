@@ -2,6 +2,8 @@ const revealItems = document.querySelectorAll(".reveal");
 const daySections = document.querySelectorAll("[data-day]");
 const dayLinks = document.querySelectorAll(".day-link");
 
+document.documentElement.classList.add("has-js");
+
 if (!("IntersectionObserver" in window)) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 } else {
