@@ -366,6 +366,10 @@ main > * {
   gap: 2.5rem;
 }
 
+.day > .journal-flow {
+  grid-column: 1 / -1;
+}
+
 .day-time {
   display: flex;
   flex-direction: column;
@@ -424,7 +428,7 @@ main > * {
 
 .journal-section {
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  grid-template-columns: minmax(18rem, 0.95fr) minmax(0, 1.05fr);
   gap: clamp(1.5rem, 4vw, 4rem);
   padding: 2rem 0;
   border-bottom: 1px solid rgba(31, 23, 18, 0.12);
@@ -549,7 +553,7 @@ main > * {
 
 .journal-media-copy {
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  grid-template-columns: minmax(18rem, 0.95fr) minmax(0, 1.05fr);
   gap: clamp(1.5rem, 4vw, 4rem);
 }
 
