@@ -616,6 +616,15 @@ main > * {
     transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+.section.reveal,
+.program-visual.reveal,
+.day.reveal,
+.easter-day.reveal,
+.closing.reveal {
+  opacity: 1;
+  transform: none;
+}
+
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
