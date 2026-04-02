@@ -1,12 +1,12 @@
 :root {
   --bg: #171411;
   --paper: #f0eadf;
+  --paper-soft: #f7f2ea;
   --ink: #1f1712;
   --gold: #c89b57;
   --gold-soft: #e8d5b4;
   --line: rgba(232, 213, 180, 0.32);
   --mist: rgba(240, 234, 223, 0.78);
-  --gradient-split: 45%;
   --hero-height: 100svh;
   --topbar-height: 5rem;
   --content-width: min(1100px, calc(100vw - 2.5rem));
@@ -27,8 +27,8 @@ body {
   font-family: "Instrument Sans", sans-serif;
   color: var(--paper);
   background:
-    radial-gradient(circle at top, rgba(200, 155, 87, 0.16), transparent 32%),
-    linear-gradient(180deg, #171411 0%, #1e1814 var(--gradient-split), #efe7db var(--gradient-split), #efe7db 100%);
+    radial-gradient(circle at top, rgba(200, 155, 87, 0.12), transparent 26rem),
+    linear-gradient(180deg, var(--paper) 0%, var(--paper-soft) 52%, var(--paper) 100%);
 }
 
 img {
@@ -46,6 +46,29 @@ a {
   min-height: var(--hero-height);
   overflow: clip;
   isolation: isolate;
+}
+
+main {
+  position: relative;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top, rgba(200, 155, 87, 0.12), transparent 26rem),
+    linear-gradient(180deg, var(--paper) 0%, var(--paper-soft) 52%, var(--paper) 100%);
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent 16rem),
+    radial-gradient(circle at 20% 0%, rgba(200, 155, 87, 0.08), transparent 22rem);
+}
+
+main > * {
+  position: relative;
+  z-index: 1;
 }
 
 .topbar {
@@ -260,8 +283,9 @@ a {
   padding-top: 1rem;
   padding-bottom: 1.5rem;
   background:
-    linear-gradient(180deg, rgba(239, 231, 219, 0.95) 0%, rgba(239, 231, 219, 0.92) 100%);
+    linear-gradient(180deg, rgba(247, 242, 234, 0.96) 0%, rgba(239, 231, 219, 0.92) 100%);
   backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(31, 23, 18, 0.08);
 }
 
 .day-nav-links {
@@ -306,6 +330,10 @@ a {
 .easter-poster {
   width: var(--content-width);
   margin: 0 auto;
+}
+
+.program-visual {
+  padding-bottom: clamp(3rem, 6vw, 5rem);
 }
 
 .poster-frame img,
@@ -557,7 +585,7 @@ a {
   padding: clamp(4rem, 8vw, 6rem) 0 0;
   background:
     linear-gradient(180deg, rgba(200, 155, 87, 0.12) 0%, rgba(239, 231, 219, 0) 20%),
-    linear-gradient(180deg, #efe7db 0%, #f7f2ea 100%);
+    linear-gradient(180deg, var(--paper) 0%, var(--paper-soft) 100%);
 }
 
 .easter-copy {
