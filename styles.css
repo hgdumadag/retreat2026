@@ -30,6 +30,10 @@ body {
     linear-gradient(180deg, #171411 0%, #1e1814 45%, #efe7db 45%, #efe7db 100%);
 }
 
+main {
+  background: #efe7db;
+}
+
 img {
   display: block;
   width: 100%;
@@ -38,6 +42,12 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
 }
 
 .hero {
@@ -314,6 +324,7 @@ a {
   gap: clamp(1.75rem, 5vw, 6rem);
   padding: clamp(3.25rem, 6vw, 5rem) 0;
   border-top: 1px solid rgba(31, 23, 18, 0.12);
+  scroll-margin-top: 7.5rem;
 }
 
 .day-heading .section-label {
@@ -325,6 +336,61 @@ a {
   grid-template-columns: minmax(5rem, 7.5rem) minmax(0, 1fr);
   gap: 1rem 1.75rem;
   align-items: stretch;
+}
+
+.day-journal {
+  grid-column: 1 / -1;
+  margin-top: 1.25rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(31, 23, 18, 0.12);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.day-journal h3,
+.day-journal h4 {
+  margin: 0;
+  color: var(--ink);
+}
+
+.day-journal h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.day-journal h4 {
+  margin-bottom: 0.65rem;
+  font-size: 1.05rem;
+}
+
+.day-journal p,
+.day-journal li {
+  color: rgba(31, 23, 18, 0.9);
+  line-height: 1.65;
+}
+
+.day-checklist {
+  margin: 0.9rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.day-checklist li::before {
+  content: "☐ ";
+  color: var(--gold);
+}
+
+.day-journal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem 1.35rem;
+}
+
+.day-journal-grid section {
+  padding: 1rem;
+  border: 1px solid rgba(31, 23, 18, 0.1);
+  background: rgba(240, 234, 223, 0.55);
 }
 
 .day-time {
@@ -355,9 +421,10 @@ a {
 .timeline li {
   position: relative;
   padding: 0 0 1.35rem 0.9rem;
-  color: rgba(31, 23, 18, 0.9);
-  font-size: clamp(1.15rem, 2vw, 1.6rem);
-  line-height: 1.25;
+  color: var(--ink);
+  font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+  line-height: 1.45;
+  text-wrap: pretty;
 }
 
 .timeline li::before {
@@ -382,6 +449,7 @@ a {
   background:
     linear-gradient(180deg, rgba(200, 155, 87, 0.12) 0%, rgba(239, 231, 219, 0) 20%),
     linear-gradient(180deg, #efe7db 0%, #f7f2ea 100%);
+  scroll-margin-top: 7.5rem;
 }
 
 .easter-copy {
@@ -462,6 +530,19 @@ a {
 
   .day-nav-links {
     justify-content: flex-start;
+  }
+
+  .day-body {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .day-time {
+    flex-direction: row;
+  }
+
+  .day-journal-grid {
+    grid-template-columns: 1fr;
   }
 
 }
