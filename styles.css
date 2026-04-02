@@ -6,6 +6,7 @@
   --gold-soft: #e8d5b4;
   --line: rgba(232, 213, 180, 0.32);
   --mist: rgba(240, 234, 223, 0.78);
+  --gradient-split: 45%;
   --hero-height: 100svh;
   --topbar-height: 5rem;
   --content-width: min(1100px, calc(100vw - 2.5rem));
@@ -27,7 +28,7 @@ body {
   color: var(--paper);
   background:
     radial-gradient(circle at top, rgba(200, 155, 87, 0.16), transparent 32%),
-    linear-gradient(180deg, #171411 0%, #1e1814 45%, #efe7db 45%, #efe7db 100%);
+    linear-gradient(180deg, #171411 0%, #1e1814 var(--gradient-split), #efe7db var(--gradient-split), #efe7db 100%);
 }
 
 img {
@@ -186,6 +187,11 @@ a {
 .button:hover,
 .button:focus-visible {
   transform: translateY(-2px);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
 }
 
 .button-primary {
