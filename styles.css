@@ -30,6 +30,10 @@ body {
     linear-gradient(180deg, #171411 0%, #1e1814 45%, #efe7db 45%, #efe7db 100%);
 }
 
+main {
+  background: #efe7db;
+}
+
 img {
   display: block;
   width: 100%;
