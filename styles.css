@@ -40,6 +40,12 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
 .hero {
   position: relative;
   min-height: var(--hero-height);
@@ -314,6 +320,7 @@ a {
   gap: clamp(1.75rem, 5vw, 6rem);
   padding: clamp(3.25rem, 6vw, 5rem) 0;
   border-top: 1px solid rgba(31, 23, 18, 0.12);
+  scroll-margin-top: 7.5rem;
 }
 
 .day-heading .section-label {
@@ -355,9 +362,10 @@ a {
 .timeline li {
   position: relative;
   padding: 0 0 1.35rem 0.9rem;
-  color: rgba(31, 23, 18, 0.9);
-  font-size: clamp(1.15rem, 2vw, 1.6rem);
-  line-height: 1.25;
+  color: var(--ink);
+  font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+  line-height: 1.45;
+  text-wrap: pretty;
 }
 
 .timeline li::before {
@@ -382,6 +390,7 @@ a {
   background:
     linear-gradient(180deg, rgba(200, 155, 87, 0.12) 0%, rgba(239, 231, 219, 0) 20%),
     linear-gradient(180deg, #efe7db 0%, #f7f2ea 100%);
+  scroll-margin-top: 7.5rem;
 }
 
 .easter-copy {
@@ -462,6 +471,15 @@ a {
 
   .day-nav-links {
     justify-content: flex-start;
+  }
+
+  .day-body {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .day-time {
+    flex-direction: row;
   }
 
 }
