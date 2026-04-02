@@ -22,18 +22,16 @@ revealItems.forEach((item) => revealObserver.observe(item));
 const sectionObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      }
-
       const activeId = entry.target.id;
 
       dayLinks.forEach((link) => {
-        const isActive = link.getAttribute("href") === `#${activeId}`;
-        link.classList.toggle("is-active", isActive);
-        if (isActive) {
-          link.setAttribute("aria-current", "true");
+        if (link.getAttribute("href") !== `#${activeId}`) return;
+
+        if (entry.isIntersecting) {
+          link.classList.add("is-active");
+          link.setAttribute("aria-current", "location");
         } else {
+          link.classList.remove("is-active");
           link.removeAttribute("aria-current");
         }
       });
