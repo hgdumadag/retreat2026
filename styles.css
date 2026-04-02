@@ -576,6 +576,10 @@ main > * {
   gap: 1rem;
 }
 
+.photo-composition-single {
+  grid-template-columns: 1fr;
+}
+
 .photo-panel {
   margin: 0;
   overflow: clip;
